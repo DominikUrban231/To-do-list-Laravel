@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // Codzienne powiadomienia o zadaniach z terminem na następny dzień - uruchamiane o 8:00 rano
+        $schedule->command('app:send-task-due-notifications')->dailyAt('08:00');
     }
 
     /**
