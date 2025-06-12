@@ -2,47 +2,46 @@
 
 ## Zrealizowane funkcjonalności
 
-1. ✅ Podstawowe operacje CRUD dla zadań:
+1.  Podstawowe operacje CRUD dla zadań:
    - Tworzenie nowych zadań
    - Wyświetlanie listy zadań
    - Edycja istniejących zadań
    - Usuwanie zadań
 
-2. ✅ Struktura zadań zawierająca:
+2.  Struktura zadań zawierająca:
    - Tytuł
    - Opis
    - Status (do zrobienia, w trakcie, zakończone)
    - Priorytet (niski, średni, wysoki)
    - Termin wykonania
 
-3. ✅ Filtrowanie zadań:
+3.  Filtrowanie zadań:
    - Według statusu
    - Według priorytetu
    - Według terminu wykonania
    - Rozwiązano problem z filtrowaniem zadań według statusu i priorytetu poprzez zastosowanie niewrażliwości na wielkość liter
    - Naprawiono błąd `InvalidArgumentException: Illegal operator and value combination` przy filtrowaniu według daty
 
-4. ✅ Historia zmian zadań:
+4.  Historia zmian zadań:
    - Śledzenie zmian statusu, priorytetu i terminu wykonania
    - Wyświetlanie historii zmian dla każdego zadania
    - Poprawiono wygląd historii zmian, zwiększając rozmiar ikon w linii czasu
    - Ulepszono strukturę HTML i CSS dla lepszej semantyki kodu
 
-5. ✅ System powiadomień:
+5.  System powiadomień:
    - Wysyłanie przypomnień e-mail o zbliżających się terminach zadań
    - Implementacja zadań cyklicznych do wysyłania przypomnień
 
-6. ✅ Udostępnianie zadań:
+6.  Udostępnianie zadań:
    - Możliwość udostępnienia zadania innym użytkownikom poprzez link
    - Dostęp do szczegółów zadania bez konieczności logowania
 
-7. ✅ Responsywny interfejs użytkownika:
+7.  Responsywny interfejs użytkownika:
    - Aplikacja dostosowana do urządzeń mobilnych i desktopowych
    - Wykorzystanie Tailwind CSS do stylizacji
-   - Dodano responsywny widok dla listy zadań z osobnym układem dla urządzeń mobilnych
    - Zaimplementowano tryb ciemny z odpowiednimi klasami Tailwind CSS
 
-8. ⚠️ Integracja z Google Calendar:
+8.  Integracja z Google Calendar:
    - Przygotowano instrukcję implementacji w README.md
    - Nie zaimplementowano w pełni ze względu na konieczność konfiguracji API Google
 
@@ -58,7 +57,7 @@
 
 3. **Problem z zapisywaniem historii przy usuwaniu zadań**
    - Błąd integralności klucza obcego podczas usuwania zadań
-   - Rozwiązanie: Zmodyfikowano metodę `destroy` w kontrolerze `TaskController`, aby najpierw zapisywać historię usunięcia zadania, a dopiero potem usuwać zadanie z bazy danych
+   - Rozwiązanie: Zmodyfikowano metodę `destroy` w kontrolerze `TaskController`, aby najpierw zapisywać historię usunięcia zadania, a dopiero potem usuwać zadanie z bazy danych, a w kolejnej zmianie usunięcie zapisywania zmiany, kiedy usówa się zadanie
 
 4. **Problemy z wyświetlaniem UI w trybie ciemnym**
    - Rozwiązanie: Dodano klasy Tailwind CSS dla trybu ciemnego (dark:border-gray-700, dark:bg-gray-900, dark:text-gray-300)
@@ -78,7 +77,7 @@ Projekt został zbudowany zgodnie z architekturą MVC frameworka Laravel, co zap
 
 1. **Responsywność interfejsu**
    - Wyzwanie: Stworzenie interfejsu, który dobrze wygląda zarówno na urządzeniach mobilnych, jak i desktopowych
-   - Rozwiązanie: Zastosowano podejście "mobile-first" z dwoma różnymi widokami dla urządzeń mobilnych i desktopowych
+   - Rozwiązanie: Zastosowano podejście "mobile-first"
 
 2. **Historia zmian**
    - Wyzwanie: Efektywne śledzenie i prezentowanie historii zmian zadań
@@ -110,7 +109,7 @@ Projekt został zbudowany zgodnie z architekturą MVC frameworka Laravel, co zap
 
 ### Wnioski końcowe
 
-Projekt To-Do List został zrealizowany zgodnie z większością wymagań funkcjonalnych i technicznych. Zastosowano dobre praktyki programistyczne, takie jak:
+Projekt To-Do List został zrealizowany zgodnie z  wymaganiami funkcjonalnymi i technicznymi. Zastosowano dobre praktyki programistyczne, takie jak:
 
 - Walidacja danych wejściowych
 - Obsługa błędów i wyjątków

@@ -1,67 +1,72 @@
 # Zadanie rekrutacyjne - Aplikacja To-Do List
 
-## Cel zadania
-Stworzenie aplikacji do zarządzania zadaniami (To-Do List) przy użyciu frameworka Laravel, z uwzględnieniem dobrych praktyk programistycznych i responsywnego interfejsu użytkownika.
+## Opis zadania
+Stwórz aplikację "To-Do list", która umożliwia użytkownikowi dodawanie, edytowanie, przeglądanie i usuwanie zadań (CRUD) oraz wysyłanie powiadomień e-mail.
 
 ## Wymagania funkcjonalne
 
-1. Podstawowe operacje CRUD dla zadań:
-   - Tworzenie nowych zadań
-   - Wyświetlanie listy zadań
-   - Edycja istniejących zadań
-   - Usuwanie zadań
+1. CRUD dla zadań:
+   - Pełne operacje CRUD (Create, Read, Update, Delete) na zadaniach, z następującymi polami:
+   - Nazwa zadania (max 255 znaków, wymagane)
+   - Opis (opcjonalnie)
+   - Priorytet (low/medium/high)
+   - Status (to-do, in progress, done)
+   - Termin wykonania (data, wymagane)
 
-2. Każde zadanie powinno zawierać:
-   - Tytuł
-   - Opis
-   - Status (do zrobienia, w trakcie, zakończone)
-   - Priorytet (niski, średni, wysoki)
-   - Termin wykonania
+2. Przeglądanie zadań:
+   - Filtrowanie listy zadań według priorytetów, statusu i terminu.
 
-3. Filtrowanie zadań:
-   - Według statusu
-   - Według priorytetu
-   - Według terminu wykonania
+3. Powiadomienia e-mail:
+   - Powiadomienie e-mail na 1 dzień przed terminem zadania.
+   - Wykorzystanie mechanizmów Laravel (Queues i Scheduler).
 
-4. Historia zmian zadań:
-   - Śledzenie zmian statusu, priorytetu i terminu wykonania
-   - Wyświetlanie historii zmian dla każdego zadania
+4. Walidacja:
+   - Właściwa walidacja wszystkich formularzy.
+   - Sprawdzanie wymaganych pól.
+   - Weryfikacja formatu daty.
+   - Kontrola limitów znaków dla pól tekstowych.
 
-5. System powiadomień:
-   - Wysyłanie przypomnień e-mail o zbliżających się terminach zadań
-   - Możliwość ustawienia czasu przypomnienia przed terminem
+5. Obsługa wielu użytkowników:
+   - System logowania i rejestracji użytkowników.
+   - Każdy użytkownik zarządza wyłącznie swoimi zadaniami.
+   - Wykorzystanie wbudowanego systemu uwierzytelniania Laravel.
 
 6. Udostępnianie zadań:
-   - Możliwość udostępnienia zadania innym użytkownikom poprzez link
-   - Użytkownik otrzymujący link powinien móc zobaczyć szczegóły zadania bez logowania
-
-7. Responsywny interfejs użytkownika:
-   - Aplikacja powinna być dostosowana do urządzeń mobilnych i desktopowych
-   - Wykorzystanie Tailwind CSS do stylizacji
-
-8. Integracja z Google Calendar:
-   - Umożliwienie przypięcia zadania do Google Kalendarza za pomocą integracji z biblioteką spatie/laravel-google-calendar
-   - Użytkownik powinien mieć możliwość skojarzenia ważnych zadań z kalendarzem Google
+   - Generowanie publicznych linków z tokenem dostępu do zadań.
+   - Ograniczenie czasowe ważności linku.
+   - Dostęp do szczegółów zadania bez konieczności logowania.
+   - Automatyczne blokowanie dostępu po upływie ważności linku.
 
 ## Wymagania techniczne
 
-1. Framework Laravel w najnowszej stabilnej wersji
-2. Baza danych MySQL lub PostgreSQL
-3. Autentykacja użytkowników z wykorzystaniem Laravel Breeze
-4. Walidacja danych wejściowych
-5. Obsługa błędów i wyjątków
-6. Testy jednostkowe dla kluczowych funkcjonalności
-7. Dokumentacja API (jeśli implementowane)
-8. Kod zgodny z PSR-12
-9. Wykorzystanie migracji i seederów do inicjalizacji bazy danych
-10. Wykorzystanie Laravel Scheduler do planowania przypomnień
+1. Back-end:
+   Laravel 11, REST API, Eloquent ORM, MySQL/SQLite, migracje baz danych.
+2. Front-end:
+   Prosty interfejs użytkownika stworzony w Laravel Blade (opcjonalnie AJAX).
+3. (Opcjonalnie) Konfiguracja w Dockerze:
+   Możliwość dostarczenia projektu z konfiguracją Docker (Dockerfile, docker-compose.yml). Dzięki temu uruchomienie aplikacji będzie łatwiejsze.
 
-## Kryteria oceny
+## Ocena projektu
 
-1. Poprawność implementacji wymaganych funkcjonalności
-2. Jakość i czytelność kodu
-3. Wydajność aplikacji
-4. Pokrycie testami
-5. Responsywność i estetyka interfejsu użytkownika
-6. Bezpieczeństwo aplikacji
-7. Dokumentacja projektu
+Przy ocenie zwracamy największą uwagę na:
+- Poprawność działania (brak błędów, poprawnie wdrożone operacje CRUD)
+- Bezpieczeństwo aplikacji.
+- Strukturę i czytelność kodu (zgodność z zasadami SOLID, KISS)
+- Znajomość Laravel (obsługa Eloquent ORM, migracje, kontrolery, walidacja, powiadomienia, polityki itd.)
+- Obsługę błędów w aplikacji.
+- Wykonanie "Dodatkowe funkcje (opcjonalne)".
+
+## Czas realiacji
+
+7 dni od otrzymania zadania.
+
+## Instrukcje przekazania
+
+- Dołącz do repozytorium plik README.md z instrukcją uruchomienia i konfiguracji projektu.
+- Dołącz do repozytorium plik TODO.md z treścią zadania rekrutacyjnego.
+- Dołącz do repozytorium plik DONE.md gdzie opiszesz co zostało zrobione i wszystkie przemyślenia na temat projektu i wykonania.
+- Prześlij link do repozytorium na GitHub/GitLab (upewnij się, że repozytorium jest publiczne).
+- Jeśli używasz Dockera, dodaj pliki konfiguracyjne i instrukcje uruchomienia w README.md.
+Gotowe rozwiązanie wyślij na adres: rekrutacja@gruparbr.pl 
+
+
